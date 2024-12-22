@@ -1,4 +1,4 @@
-# CAN Bus Library 
+# CAN Bus Library
 [![GitHub](https://img.shields.io/github/license/Longan-Labs/Arduino_CAN_BUS_MCP2515)](https://github.com/Longan-Labs/Arduino_CAN_BUS_MCP2515/blob/master/LICENSE)
 [![Installation instructions](https://www.ardu-badge.com/badge/mcp_canbus.svg?)](https://www.ardu-badge.com/mcp_canbus)
 [![GitHub version](https://img.shields.io/github/release/Longan-Labs/Arduino_CAN_BUS_MCP2515.svg?logo=github&logoColor=ffffff)](https://github.com/Longan-Labs/Arduino_CAN_BUS_MCP2515/releases/latest)
@@ -13,7 +13,7 @@ With this library, you can,
 1. Send a CAN2.0 frame
 2. Receive a CAN2.0 frame
 3. Get data from OBD-II
-4. Set the masks and filters, there're 32 masks and filters. 
+4. Set the masks and filters, there're 32 masks and filters.
 
 ## Installation
 
@@ -64,13 +64,13 @@ here are many examples implemented in this library. One of the examples is below
 ```Cpp
 /*  send a frame from can bus
     support@longan-labs.cc
-    
+
     CAN Baudrate,
-    
+
     #define CAN_5KBPS           1
     #define CAN_10KBPS          2
     #define CAN_20KBPS          3
-    #define CAN_25KBPS          4 
+    #define CAN_25KBPS          4
     #define CAN_31K25BPS        5
     #define CAN_33KBPS          6
     #define CAN_40KBPS          7
@@ -85,13 +85,13 @@ here are many examples implemented in this library. One of the examples is below
     #define CAN_500KBPS         16
     #define CAN_666KBPS         17
     #define CAN_1000KBPS        18
-    
+
     CANBed V1: https://www.longan-labs.cc/1030008.html
     CANBed M0: https://www.longan-labs.cc/1030014.html
     CAN Bus Shield: https://www.longan-labs.cc/1030016.html
     OBD-II CAN Bus GPS Dev Kit: https://www.longan-labs.cc/1030003.html
 */
-   
+
 #include <mcp_canbus.h>
 #include <SPI.h>
 
@@ -105,11 +105,11 @@ void setup()
 {
     Serial.begin(115200);
     while(!Serial);
-    
+
     // below code need for OBD-II GPS Dev Kit
     // pinMode(A3, OUTPUT);
     // digitalWrite(A3, HIGH);
-    
+
     while (CAN_OK != CAN.begin(CAN_500KBPS))    // init can bus : baudrate = 500k
     {
         Serial.println("CAN BUS FAIL!");
